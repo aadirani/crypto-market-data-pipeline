@@ -46,4 +46,3 @@ The report prints Markdown tables: a summary of the period, volatility, maximum 
 
 ---
 
-Built with AI assistance.
