@@ -44,5 +44,3 @@ The report prints Markdown tables: a summary of the period, volatility, maximum 
 - **Bybit isn't available in every country**, including the US, where GitHub's test servers run. That's why the automated tests use the synthetic sample file. Check that using the API is permitted where you run it.
 - This is a data-engineering project. Its statistics describe the past and are **not trading advice**.
 
----
-
