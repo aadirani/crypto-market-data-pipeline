@@ -1,0 +1,22 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      # GitHub's runners are in the US, where Bybit's API is not available,
+      # so CI uses the saved synthetic sample instead of the live API.
+      - name: Example run on the sample file
+        run: |
+          python -m pipeline ingest --from-file data/sample_kline_BTCUSDT_D.json --db demo.db --strict
+          python -m pipeline report --db demo.db
